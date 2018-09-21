@@ -1,0 +1,8 @@
+{
+  "name": "svgcss",
+  "version": "0.1.0",
+  "main": "src/index.js",
+  "repository": "git@github.com:MarsBased/svgcss.git",
+  "author": "marsbased.com",
+  "license": "MIT"
+}
