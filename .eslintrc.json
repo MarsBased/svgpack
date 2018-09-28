@@ -1,0 +1,28 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "es6": true,
+    "node": true,
+    "mocha": true,
+    "jest": true
+  },
+  "plugins": [],
+  "globals": {},
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": false
+    },
+    "sourceType": "script"
+  },
+  "rules": {
+    "no-const-assign": "error",
+    "no-this-before-super": "warn",
+    "no-undef": "error",
+    "no-unreachable": "warn",
+    "no-unused-vars": "warn",
+    "constructor-super": "warn",
+    "valid-typeof": "warn",
+    "no-redeclare": "error",
+    "no-console": "warn"
+  }
+}
