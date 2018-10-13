@@ -19,6 +19,9 @@
     "prettier": "^1.14.3"
   },
   "dependencies": {
+    "fast-glob": "^2.2.3",
+    "filehound": "^1.16.4",
+    "globby": "^8.0.1",
     "minimist": "^1.2.0",
     "ora": "^3.0.0",
     "svgo": "^1.1.1",
