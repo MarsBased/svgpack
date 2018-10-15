@@ -30,7 +30,7 @@ function getSvgoOptions(options) {
     { removeViewBox: false },
     { cleanUpEnableBackground: true },
     { convertStyleToAttrs: true },
-    { convertColors: true },
+    { convertColors: false },
     { convertPathData: true },
     { convertTransform: true },
     { removeUnknownsAndDefaults: true },
