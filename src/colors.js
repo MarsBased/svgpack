@@ -1,16 +1,14 @@
 const fp = require("lodash/fp");
-const DETECT_COLORS = /(#[0-9a-f]{3}){1,2}/gi;
+const DETECT_COLORS = /(#[0-9A-F]{6}|#[0-9A-F]{3})/gi;
 
-const identity = x => x;
 const countColors = fp.countBy(name => name.toUpperCase());
 
 const getColorName = (_, i) => `$color${i ? i : ""}`;
 
-function detect(string, sanitize = identity) {
+function detect(string) {
   const colorValues = fp.keys(frequecy(string));
   const colorNames = colorValues.map(getColorName);
-  const colors = fp.zipObject(colorNames, colorValues);
-  return fp.mapValues(sanitize, colors);
+  return fp.zipObject(colorNames, colorValues);
 }
 
 function frequecy(string) {

@@ -3,7 +3,7 @@ const ora = require("ora");
 const fs = require("fs");
 const util = require("util");
 const getEntries = require("./files");
-const sass = require("./sass");
+const sass = require("./svg-to-sass");
 
 const readFile = util.promisify(fs.readFile);
 

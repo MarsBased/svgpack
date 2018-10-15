@@ -5,26 +5,17 @@ describe("Colors", () => {
   it("detect colors", () => {
     expect(Colors.detect(colors)).toEqual({
       $color: "#FFF",
-      $color1: "#FAF",
+      $color1: "#FAFAFA",
       $color2: "#333",
-      $color3: "#3A3"
-    });
-  });
-  it("detect colors with sanitizer", () => {
-    const sanitizer = x => "STR:" + x;
-    expect(Colors.detect(colors, sanitizer)).toEqual({
-      $color: "STR:#FFF",
-      $color1: "STR:#FAF",
-      $color2: "STR:#333",
-      $color3: "STR:#3A3"
+      $color3: "#3A3A3A"
     });
   });
 
   it("get color frequency", () => {
     expect(Colors.frequecy(colors)).toEqual({
       "#333": 1,
-      "#3A3": 1,
-      "#FAF": 1,
+      "#3A3A3A": 1,
+      "#FAFAFA": 1,
       "#FFF": 3
     });
   });

@@ -22,6 +22,12 @@ It accepts a folder and write the result in the standard output:
 > svgpack my-icon-folder/ > icons.scss
 ```
 
+## Test
+
+Run tests with `yarn test` or, if you have jest globally installed, just `jest`
+
+You can run svgpack directly from repo like this: `./bin/svgpack test/icons`
+
 ## License
 
 MIT License
