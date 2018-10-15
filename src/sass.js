@@ -10,7 +10,7 @@ module.exports = function(options) {
   const optimize = optimizer(options);
 
   return function toSassFunction(filename) {
-    const name = toSlugCase(basename(filename));
+    const name = toSlugCase(basename(filename, ".svg"));
 
     return function(svg) {
       const content = svg.toString();
@@ -24,7 +24,7 @@ module.exports = function(options) {
 };
 
 function colorTemplate(name) {
-  return `${name}: str-replace(inspect(${name}), '#', '%23'); //fix and replace hexcolor\n`;
+  return `${name}: str-replace(inspect(${name}), '#', '%23'); //fix and replace hexcolor`;
 }
 
 function template(name, svg, colorNames) {

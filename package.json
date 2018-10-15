@@ -14,14 +14,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "pretty-quick --staged"
     }
-  },
-  "lint-staged": {
-    "*.{js,json,css,md}": [
-      "prettier --write",
-      "git add"
-    ]
   },
   "dependencies": {
     "globby": "^8.0.1",
@@ -32,8 +26,9 @@
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
-    "eslint": "^5.6.0",
-    "husky": "^0.14.3",
-    "prettier": "^1.14.3"
+    "eslint": "^5.7.0",
+    "husky": "1.1.2",
+    "prettier": "^1.14.3",
+    "pretty-quick": "^1.8.0"
   }
 }
