@@ -14,10 +14,11 @@ module.exports = function(options = {}) {
 
     return function(svg) {
       const content = svg.toString();
-      const colors = Colors.detect(content, sanitize);
-      const postProcess = svg => replaceColors(sanitize(svg), colors);
+      const colors = Colors.detect(content);
+      const sanitizedColors = fp.mapValues(sanitize, colors);
+      const postProcess = svg => replaceColors(sanitize(svg), sanitizedColors);
       return optimize(content).then(optimized =>
-        template(name, postProcess(optimized), fp.keys(colors))
+        template(name, postProcess(optimized), colors)
       );
     };
   };
@@ -40,10 +41,17 @@ function colorTemplate(name) {
   return `${name}: str-replace(inspect(${name}), '#', '%23'); //fix and replace hexcolor`;
 }
 
-function template(name, svg, colorNames) {
+function template(name, svg, colors) {
   return `
-@function ${name}(${colorNames.join(", ")}) {
-  ${colorNames.map(colorTemplate)}
+@function ${name}(${getFunctionParameters(colors)}) {
+  ${fp
+    .keys(colors)
+    .map(colorTemplate)
+    .join("\n  ")}
   @return url("data:image/svg+xml,${svg}");
 }\n`;
+}
+
+function getFunctionParameters(colors) {
+  return fp.map(key => `${key}: ${colors[key]}`, fp.keys(colors)).join(", ");
 }
