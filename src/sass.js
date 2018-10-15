@@ -26,7 +26,7 @@ module.exports = function(options = {}) {
 function replaceColors(string, colors) {
   const names = fp.keys(colors);
   return names.reduce((svg, name) => {
-    return replaceAll(svg, colors[name], `'+${name}+'`);
+    return replaceAll(svg, colors[name], `"+${name}+"`);
   }, string);
 }
 
