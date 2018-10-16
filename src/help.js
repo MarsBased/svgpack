@@ -8,6 +8,7 @@ const HELP = `
 
   -h, --help                          output usage information
   -v, --version                       output the version number
+  -r, --no-replace                    skip replace-str function from output
 
   Example: \`svgpack .\` to pack all svg files in the current folder
 `;

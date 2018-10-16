@@ -7,14 +7,15 @@ const sass = require("./svg-to-sass");
 
 const readFile = util.promisify(fs.readFile);
 
-const shouldAddReplaceFn = options => true;
+const shouldSkipReplace = options =>
+  options.r === true || options["noreplace"] === true;
 
 /**
  * Given a list of sources, pack them
  */
 module.exports = function packsvg(options = {}) {
   const toSassFunction = sass(options);
-  const addReplaceFn = shouldAddReplaceFn(options);
+  const skipReplace = shouldSkipReplace(options);
 
   return function packsvg(sources) {
     const joinAll = xs => Promise.all(xs).then(xs => xs.join(" "));
@@ -25,7 +26,7 @@ module.exports = function packsvg(options = {}) {
     return entries(sources)
       .then(fp.map(withSpinners(processFile)))
       .then(joinAll)
-      .then(all => (addReplaceFn ? REPLACE_FN + all : all));
+      .then(all => (skipReplace ? all : REPLACE_FN + all));
   };
 };
 
