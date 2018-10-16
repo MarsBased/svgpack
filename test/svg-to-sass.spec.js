@@ -3,7 +3,7 @@ const sass = require("../src/svg-to-sass");
 const toSassFunction = sass();
 
 describe("Sass module", () => {
-  test("generate function", done => {
+  test("generate function", () => {
     const INPUT = `
   <?xml version="1.0" encoding="UTF-8"?>
   <svg width="200px" height="200px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -24,19 +24,12 @@ describe("Sass module", () => {
       </g>
   </svg>
   `;
-    const OUTPUT = `
-@function my-icon($color: #000000) {
-  $color: str-replace(inspect($color), '#', '%23'); //fix and replace hexcolor
-  @return url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath fill='%23000' d='M25.067 43.783c1.103-3.152-16.36 43.772-17.646 47.11-1.286 3.339.552 5.75 3.125 6.677 2.574.928 4.596 1.67 7.72 2.597 3.125.927 3.86-.557 4.78-2.597.919-2.04 16.726-45.44 17.83-47.851 1.102-2.411.734-4.57-2.574-6.087-3.31-1.518-5.699-2.074-8.823-3.001-3.125-.928-4.412 3.152-4.412 3.152M168.35 45.615c-1.478-2.98 21.57 41.253 23.255 44.394 1.684 3.142.123 5.737-2.35 6.955-2.474 1.218-4.416 2.188-7.443 3.47-3.028 1.283-3.94-.094-5.103-1.998-1.162-1.904-22.136-42.856-23.526-45.105-1.39-2.248-1.276-4.421 1.866-6.307 3.143-1.887 5.476-2.718 8.502-4 3.027-1.283 4.8 2.59 4.8 2.59'/%3E%3Cpath stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='8' d='M96 50.94s-2.734-5.55-10.846-4.885c-8.112.666-17.101 8.882-22.144 9.105-5.042.221-8.77-3.831-10.743-4.58-1.973-.75-3.069.004-3.069.004S31 95.793 31 97.79C31 99.789 43.716 114 43.716 114M111.762 153.293s5.753 2.455 8.409-1.785c2.655-4.242 4.426-8.482 1.991-11.384-2.434-2.902-14.162-17.187-14.162-17.187l16.375 19.643s7.303 3.57 12.171-.447c4.868-4.018 1.107-13.616 1.107-13.616L123.519 112l15.52 18.08s8.719 7.697 13.218 1.34c1.477-2.088 2.743-4.9 2.743-4.9'/%3E%3Cpath fill='%23000' d='M152.763 121s-42.52-46.117-45.173-49.115c-2.653-2.999-3.574-2.537-8.642 0-5.069 2.536-20.734 11.301-26.263 13.607-5.53 2.307-8.22-.922-9.754-2.767-1.535-1.845-2.687-6.69 9.524-14.761 12.21-8.073 22.346-16.146 31.1-19.144 8.755-2.998 14.284-2.537 24.651 3.23 10.368 5.765 9.215 8.303 16.587 4.612l2.535-.923L171 100.531s-4.396 7.038-7.294 10.185c-5.69 6.178-10.943 10.284-10.943 10.284M46.418 127.291c-3.003-4.223-.684-8.445 1.855-10.486 2.54-2.042 7.423-4.64 10.646-.928 3.223 3.712 2.946 8.51-2.554 12.31-3.703 2.56-7.506 2.538-9.947-.896M61.248 137.133c-1.927-3.197-1.66-7.526 1.064-10.19 2.724-2.665 9.303-8.658 11.828-10.723 2.525-2.064 6.645-1.465 8.373 1.465 1.728 2.93 2.525 7.526-.864 10.59s-9.236 7.992-11.562 10.123c-2.326 2.131-4.652 1.799-6.314.932-1.66-.865-2.525-2.197-2.525-2.197M75.744 138.213c2.3-2.222 12.746-11.64 15.061-13.327 2.314-1.688 5.82-.779 7.54 1.169 1.72 1.946 2.646 7.724 0 10.32-2.646 2.597-12.567 11.035-15.08 13.307-2.513 2.272-5.82 1.234-7.673-.324-1.851-1.558-2.712-4.025-2.579-6.037.132-2.012 1.566-3.984 2.73-5.108M98.806 141.225c2.71-2.725 7.29-1.635 8.504 0 1.215 1.636 3.924 6 .374 9.995-3.551 3.996-5.05 5.723-7.758 7.63-2.708 1.908-6.072 1.454-8.128-1.453-2.056-2.908-2.056-7.54 1.028-10.267 3.084-2.725 5.98-5.905 5.98-5.905'/%3E%3C/g%3E%3C/svg%3E\");
-}
-`;
-    toSassFunction("MyIcon")(INPUT).then(result => {
-      expect(result).toEqual(OUTPUT);
-      done();
+    return toSassFunction("MyIcon")(INPUT).then(result => {
+      expect(result).toMatchSnapshot();
     });
   });
 
-  test("generate function with several colors", done => {
+  test("generate function with several colors", () => {
     const INPUT = `
     <?xml version="1.0" encoding="UTF-8"?>
     <svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -53,21 +46,25 @@ describe("Sass module", () => {
         </g>
     </svg>
     `;
-    const OUTPUT = `
-@function my-icon($color: #979797, $color1: #BD10E0, $color2: #C25B15, $color3: #50E3C2, $color4: #000000, $color5: #4A90E2, $color6: #EF1625) {
-  $color: str-replace(inspect($color), '#', '%23'); //fix and replace hexcolor
-  $color1: str-replace(inspect($color1), '#', '%23'); //fix and replace hexcolor
-  $color2: str-replace(inspect($color2), '#', '%23'); //fix and replace hexcolor
-  $color3: str-replace(inspect($color3), '#', '%23'); //fix and replace hexcolor
-  $color4: str-replace(inspect($color4), '#', '%23'); //fix and replace hexcolor
-  $color5: str-replace(inspect($color5), '#', '%23'); //fix and replace hexcolor
-  $color6: str-replace(inspect($color6), '#', '%23'); //fix and replace hexcolor
-  @return url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Ccircle cx='24.5' cy='24.5' r='17.5' fill='"+$color1+"' stroke='"+$color+"'/%3E%3Ccircle cx='42.5' cy='42.5' r='17.5' fill='"+$color2+"' stroke='"+$color+"'/%3E%3Ccircle cx='21' cy='49' r='11' fill='"+$color3+"' stroke='"+$color+"'/%3E%3Ccircle cx='21' cy='15' r='11' fill='"+$color5+"' stroke='%23000'/%3E%3Ccircle cx='50' cy='52' r='11' fill='"+$color6+"' stroke='%23000'/%3E%3Ccircle cx='52.5' cy='14.5' r='7.5' fill='"+$color1+"' stroke='"+$color+"'/%3E%3C/g%3E%3C/svg%3E");
-}
-`;
-    toSassFunction("MyIcon")(INPUT).then(result => {
-      expect(result).toEqual(OUTPUT);
-      done();
+    return toSassFunction("MyIcon")(INPUT).then(result => {
+      expect(result).toMatchSnapshot();
+    });
+  });
+
+  test("it replaces color correctly", () => {
+    const INPUT = `
+    <?xml version="1.0" encoding="UTF-8"?>
+    <svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+        <title>icon-search</title>
+        <desc>Created with Sketch.</desc>
+        <g id="icon-search" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <path d="M6.89329264,10.1950857 L6.89329264,9.69508575 C8.4257168,9.69508575 9.66864188,8.44757574 9.66864188,6.90765432 C9.66864188,5.36758437 8.42556848,4.11959767 6.89329264,4.11959767 C5.36101681,4.11959767 4.11794341,5.36758437 4.11794341,6.90765432 C4.11794341,8.44757574 5.36086848,9.69508575 6.89329264,9.69508575 L6.89329264,10.1950857 Z M13.2631006,12.1136251 C13.5789665,12.4306561 13.5789665,12.9444318 13.2631006,13.2614628 C12.94622,13.5795124 12.4311648,13.5795124 12.1132347,13.2604066 L9.4017132,10.5226264 C8.67330112,11.0335404 7.80453193,11.3153087 6.89329264,11.3153087 C4.46659662,11.3153087 2.5,9.34123945 2.5,6.90765432 C2.5,4.4736476 4.46639391,2.5 6.89329264,2.5 C9.32019137,2.5 11.2865853,4.47364759 11.2865853,6.90765432 C11.2865853,7.79670972 11.0223571,8.64594475 10.5403313,9.36393624 L13.2631006,12.1136251 Z" id="Loupe" fill="#000000" fill-rule="nonzero"></path>
+        </g>
+    </svg>
+    `;
+    return toSassFunction("MyIcon")(INPUT).then(result => {
+      expect(result).toMatchSnapshot();
     });
   });
 });

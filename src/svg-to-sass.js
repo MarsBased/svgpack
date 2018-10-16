@@ -13,13 +13,12 @@ module.exports = function(options = {}) {
     const name = toSlugCase(basename(filename, ".svg"));
 
     return function(svg) {
-      const content = svg.toString();
-      const colors = Colors.detect(content);
-      const sanitizedColors = fp.mapValues(sanitize, colors);
-      const postProcess = svg => replaceColors(sanitize(svg), sanitizedColors);
-      return optimize(content).then(optimized =>
-        template(name, postProcess(optimized), colors)
-      );
+      return optimize(svg.toString()).then(optimized => {
+        const colors = Colors.detect(optimized);
+        const sanitizedColors = fp.mapValues(sanitize, colors);
+        const result = replaceColors(sanitize(optimized), sanitizedColors);
+        return template(name, result, colors);
+      });
     };
   };
 };
@@ -53,5 +52,7 @@ function template(name, svg, colors) {
 }
 
 function getFunctionParameters(colors) {
-  return fp.map(key => `${key}: ${colors[key]}`, fp.keys(colors)).join(", ");
+  return fp
+    .map(key => `${key}: ${colors[key]}`, fp.keys(colors).sort())
+    .join(", ");
 }
