@@ -1,6 +1,6 @@
 {
-  "name": "svgpack",
-  "version": "0.1.0",
+  "name": "@marsbased/svgpack",
+  "version": "1.0.0",
   "repository": "git@github.com:MarsBased/svgpack.git",
   "author": "marsbased.com",
   "license": "MIT",
