@@ -1,0 +1,19 @@
+@function icon-arrow-right($color: #ef1625) {
+  $color: str-replace(inspect($color), "#", "%23"); //fix and replace hexcolor
+  @return url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='"+$color+"' fill-rule='evenodd' d='M9.906 4.829l-1.06 1.06 1.72 1.72h-7.19a.75.75 0 0 0 0 1.5h7.19l-1.72 1.72 1.06 1.06 3.53-3.53-3.53-3.53z'/%3E%3C/svg%3E");
+}
+
+@function icon-caret-down($color: #ef1625) {
+  $color: str-replace(inspect($color), "#", "%23"); //fix and replace hexcolor
+  @return url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='"+$color+"' fill-rule='evenodd' d='M12 6.5c0-.273-.227-.5-.5-.5h-7c-.273 0-.5.227-.5.5 0 .133.055.258.148.352l3.5 3.5A.497.497 0 0 0 8 10.5a.497.497 0 0 0 .352-.148l1.758-1.759 1.742-1.741A.497.497 0 0 0 12 6.5z'/%3E%3C/svg%3E");
+}
+
+@function icon-required($color: #ef1625) {
+  $color: str-replace(inspect($color), "#", "%23"); //fix and replace hexcolor
+  @return url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='"+$color+"' fill-rule='evenodd' d='M7.1 8.54L4 7.46 4.636 6l2.808 1.46L7.179 4H8.82l-.265 3.46L11.364 6 12 7.46 8.927 8.54l2.384 2.406L10.146 12l-2.12-2.81L5.907 12l-1.192-1.054z'/%3E%3C/svg%3E");
+}
+
+@function icon-search($color: #ef1625) {
+  $color: str-replace(inspect($color), "#", "%23"); //fix and replace hexcolor
+  @return url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='"+$color+"' fill-rule='nonzero' d='M6.893 10.195v-.5A2.781 2.781 0 0 0 9.67 6.908 2.782 2.782 0 0 0 6.893 4.12a2.782 2.782 0 0 0-2.775 2.788 2.781 2.781 0 0 0 2.775 2.787v.5zm6.37 1.919a.811.811 0 1 1-1.15 1.147l-2.711-2.738a4.356 4.356 0 0 1-2.509.792A4.4 4.4 0 0 1 2.5 6.908 4.4 4.4 0 0 1 6.893 2.5a4.4 4.4 0 0 1 4.394 4.408c0 .889-.265 1.738-.747 2.456l2.723 2.75z'/%3E%3C/svg%3E");
+}
