@@ -2,8 +2,8 @@ const fs = require("fs");
 const { join } = require("path");
 const svgpack = require("../src/pack");
 
-const ROOT = join(__dirname, "icons");
-const FILES = ["barrel", "dollar", "handshake"];
+const ROOT = join(__dirname, "assets");
+const FILES = ["arrow", "caret", "required", "search"];
 describe("svgpack", () => {
   // not yet here
   test.skip("icon examples", done => {

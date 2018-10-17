@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-caret-down</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icon-caret-down" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M12.0000095,6.49999225 C12.0000095,6.22655443 11.7734468,5.99999166 11.5000089,5.99999166 L4.5000006,5.99999166 C4.22656277,5.99999166 4,6.22655443 4,6.49999225 C4,6.63280491 4.05468757,6.75780506 4.14843768,6.85155517 L7.64844185,10.3515593 C7.74219196,10.4453095 7.86719211,10.499997 8.00000477,10.499997 C8.13281743,10.499997 8.25781758,10.4453095 8.35156769,10.3515593 L10.1097366,8.59339039 L11.8515719,6.85155517 C11.945322,6.75780506 12.0000095,6.63280491 12.0000095,6.49999225 Z" id="caret-down" fill="#EF1625"></path>
+    </g>
+</svg>
