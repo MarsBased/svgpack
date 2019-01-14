@@ -52,23 +52,23 @@ Write `svgpack --help` for more options
 
 Running `svgpack` against [this svg file](https://github.com/MarsBased/svgpack/blob/master/test/assets/svgpack-imagotype.svg):
 
-```bash
+```
 > svgpack test/assets/svgpack-imagotype.svg
 ```
 
 outputs something like this:
 
-```sass
-@function svgpack-imagotype($color: #EF1625) {
-  $color: str-replace(inspect($color), '#', '%23'); //fix and replace hexcolor
-  @return url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 440 90'%3E%3Cg fill='"+$color+"' fill-rule='evenodd'%3E%3Cpath ...")
+```scss
+@function svgpack-imagotype($color: #ef1625) {
+  $color: str-replace(inspect($color), "#", "%23"); //fix and replace hexcolor
+  @return url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 440 90'%3E%3Cg fill='"+$color+"' fill-rule='evenodd'%3E%3Cpath ...");
 }
 ```
 
 To use the sass function we only need to call them passing the desired color:
 
-```sass
-$color: #FFF;
+```scss
+$color: #fff;
 
 .svgpack-main-logo {
   display: block;
@@ -78,7 +78,11 @@ $color: #FFF;
 }
 ```
 
-see this example in [codepen](https://codepen.io/JavierArtero/pen/OBQwme?editors=1100)
+### SVG to SCSS
+
+[![youtube](https://marsbased.github.io/svgpack/svgpack-youtube-svg-to-scss.jpg)](http://www.youtube.com/watch?v=cllVRaJZSMo "svgpack svg to scss")
+
+See this example in [codepen](https://codepen.io/JavierArtero/pen/OBQwme?editors=1100)
 
 ### [Codepen example with icons](https://codepen.io/JavierArtero/pen/EdQdEK?editors=1100)
 
