@@ -47,7 +47,7 @@ function getSvgoOptions(options) {
     { convertShapeToPath: true },
     { sortAttrs: true },
     { transformsWithOnePath: false },
-    { removeDimensions: true },
+    { removeDimensions: false },
     { removeAttrs: { attrs: ["xmlns", "fill=none"] } }
   ];
   return Object.assign({ plugins }, options);
