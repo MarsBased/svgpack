@@ -88,6 +88,10 @@ See this example in [codepen](https://codepen.io/JavierArtero/pen/OBQwme?editors
 
 ### [Codepen example multicolor](https://codepen.io/JavierArtero/pen/oaEQLq?editors=1100)
 
+### [Codepen icons text color](https://codepen.io/JavierArtero/pen/MWjaogg?editors=1100)
+
+### [Codepen mask background](https://codepen.io/JavierArtero/pen/OJRygmr?editors=1100)
+
 ## Test
 
 Run tests with `yarn test` or, if you have jest globally installed, just `jest`
