@@ -1,28 +1,21 @@
 {
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "ecmaVersion": 2022,
+    "sourceType": "module",
+    "requireConfigFile": false
+  },
   "env": {
-    "es6": true,
+    "es2022": true,
     "node": true,
-    "mocha": true,
     "jest": true
   },
-  "plugins": [],
-  "globals": {},
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": false
-    },
-    "sourceType": "script"
-  },
+  "extends": ["eslint:recommended"],
   "rules": {
-    "no-const-assign": "error",
-    "no-this-before-super": "warn",
-    "no-undef": "error",
-    "no-unreachable": "warn",
+    "no-console": "warn",
     "no-unused-vars": "warn",
-    "constructor-super": "warn",
-    "valid-typeof": "warn",
-    "no-redeclare": "error",
-    "no-console": "warn"
+    "no-undef": "error",
+    "prefer-const": "error",
+    "no-var": "error"
   }
 }

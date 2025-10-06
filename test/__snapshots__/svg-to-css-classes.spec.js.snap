@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CSS Classes module generate CSS variable with background class 1`] = `
+"  --my-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cg id='icon-search' fill='none' fill-rule='evenodd' stroke='none' stroke-width='1'%3E%3Cpath id='Loupe' fill='%23000000' fill-rule='nonzero' d='M6.893 10.195v-.5A2.78 2.78 0 0 0 9.67 6.908 2.78 2.78 0 0 0 6.893 4.12a2.78 2.78 0 0 0-2.775 2.788 2.78 2.78 0 0 0 2.775 2.787zm6.37 1.919a.811.811 0 1 1-1.15 1.147l-2.711-2.738a4.36 4.36 0 0 1-2.509.792A4.4 4.4 0 0 1 2.5 6.908 4.4 4.4 0 0 1 6.893 2.5a4.4 4.4 0 0 1 4.394 4.408c0 .889-.265 1.738-.747 2.456z'/%3E%3C/g%3E%3C/svg%3E");
+"
+`;
+
+exports[`CSS Classes module generate CSS variable with both background and mask classes 1`] = `
+"  --my-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cg id='icon-search' fill='none' fill-rule='evenodd' stroke='none' stroke-width='1'%3E%3Cpath id='Loupe' fill='%23000000' fill-rule='nonzero' d='M6.893 10.195v-.5A2.78 2.78 0 0 0 9.67 6.908 2.78 2.78 0 0 0 6.893 4.12a2.78 2.78 0 0 0-2.775 2.788 2.78 2.78 0 0 0 2.775 2.787zm6.37 1.919a.811.811 0 1 1-1.15 1.147l-2.711-2.738a4.36 4.36 0 0 1-2.509.792A4.4 4.4 0 0 1 2.5 6.908 4.4 4.4 0 0 1 6.893 2.5a4.4 4.4 0 0 1 4.394 4.408c0 .889-.265 1.738-.747 2.456z'/%3E%3C/g%3E%3C/svg%3E");
+"
+`;
+
+exports[`CSS Classes module generate CSS variable with custom background class name 1`] = `
+"  --my-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cg id='icon-search' fill='none' fill-rule='evenodd' stroke='none' stroke-width='1'%3E%3Cpath id='Loupe' fill='%23000000' fill-rule='nonzero' d='M6.893 10.195v-.5A2.78 2.78 0 0 0 9.67 6.908 2.78 2.78 0 0 0 6.893 4.12a2.78 2.78 0 0 0-2.775 2.788 2.78 2.78 0 0 0 2.775 2.787zm6.37 1.919a.811.811 0 1 1-1.15 1.147l-2.711-2.738a4.36 4.36 0 0 1-2.509.792A4.4 4.4 0 0 1 2.5 6.908 4.4 4.4 0 0 1 6.893 2.5a4.4 4.4 0 0 1 4.394 4.408c0 .889-.265 1.738-.747 2.456z'/%3E%3C/g%3E%3C/svg%3E");
+"
+`;
+
+exports[`CSS Classes module generate CSS variable with custom class names 1`] = `
+"  --my-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cg id='icon-search' fill='none' fill-rule='evenodd' stroke='none' stroke-width='1'%3E%3Cpath id='Loupe' fill='%23000000' fill-rule='nonzero' d='M6.893 10.195v-.5A2.78 2.78 0 0 0 9.67 6.908 2.78 2.78 0 0 0 6.893 4.12a2.78 2.78 0 0 0-2.775 2.788 2.78 2.78 0 0 0 2.775 2.787zm6.37 1.919a.811.811 0 1 1-1.15 1.147l-2.711-2.738a4.36 4.36 0 0 1-2.509.792A4.4 4.4 0 0 1 2.5 6.908 4.4 4.4 0 0 1 6.893 2.5a4.4 4.4 0 0 1 4.394 4.408c0 .889-.265 1.738-.747 2.456z'/%3E%3C/g%3E%3C/svg%3E");
+"
+`;
+
+exports[`CSS Classes module generate CSS variable with mask class 1`] = `
+"  --my-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cg id='icon-search' fill='none' fill-rule='evenodd' stroke='none' stroke-width='1'%3E%3Cpath id='Loupe' fill='%23000000' fill-rule='nonzero' d='M6.893 10.195v-.5A2.78 2.78 0 0 0 9.67 6.908 2.78 2.78 0 0 0 6.893 4.12a2.78 2.78 0 0 0-2.775 2.788 2.78 2.78 0 0 0 2.775 2.787zm6.37 1.919a.811.811 0 1 1-1.15 1.147l-2.711-2.738a4.36 4.36 0 0 1-2.509.792A4.4 4.4 0 0 1 2.5 6.908 4.4 4.4 0 0 1 6.893 2.5a4.4 4.4 0 0 1 4.394 4.408c0 .889-.265 1.738-.747 2.456z'/%3E%3C/g%3E%3C/svg%3E");
+"
+`;
+
+exports[`CSS Classes module generate CSS variable without classes 1`] = `
+"  --my-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cg id='icon-search' fill='none' fill-rule='evenodd' stroke='none' stroke-width='1'%3E%3Cpath id='Loupe' fill='%23000000' fill-rule='nonzero' d='M6.893 10.195v-.5A2.78 2.78 0 0 0 9.67 6.908 2.78 2.78 0 0 0 6.893 4.12a2.78 2.78 0 0 0-2.775 2.788 2.78 2.78 0 0 0 2.775 2.787zm6.37 1.919a.811.811 0 1 1-1.15 1.147l-2.711-2.738a4.36 4.36 0 0 1-2.509.792A4.4 4.4 0 0 1 2.5 6.908 4.4 4.4 0 0 1 6.893 2.5a4.4 4.4 0 0 1 4.394 4.408c0 .889-.265 1.738-.747 2.456z'/%3E%3C/g%3E%3C/svg%3E");
+"
+`;

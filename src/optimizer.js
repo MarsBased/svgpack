@@ -1,4 +1,4 @@
-const Svgo = require("svgo");
+const { optimize } = require('svgo');
 
 /**
  * Optimize a svg file
@@ -7,48 +7,46 @@ const Svgo = require("svgo");
  * @param {String|Buffer} svg - the svg
  * @return {Promise<String>}
  */
-module.exports = function optimize(options) {
-  const optimizer = new Svgo(getSvgoOptions(options));
-  return svg => optimizer.optimize(svg.toString()).then(r => r.data);
+module.exports = function optimizeSvg(options) {
+  const svgoOptions = getSvgoOptions(options);
+  return (svg) => {
+    const result = optimize(svg.toString(), svgoOptions);
+    return Promise.resolve(result.data);
+  };
 };
 
 function getSvgoOptions(options) {
-  const plugins = [
-    { cleanupAttrs: true },
-    { removeDoctype: true },
-    { removeXMLProcInst: true },
-    { removeComments: true },
-    { removeMetadata: true },
-    { removeTitle: true },
-    { removeDesc: true },
-    { removeUselessDefs: true },
-    { removeEditorsNSData: true },
-    { removeEmptyAttrs: false },
-    { removeHiddenElems: true },
-    { removeEmptyText: true },
-    { removeEmptyContainers: true },
-    { removeViewBox: false },
-    { cleanUpEnableBackground: true },
-    { convertStyleToAttrs: true },
-    { convertColors: false },
-    { convertPathData: true },
-    { convertTransform: true },
-    { removeUnknownsAndDefaults: true },
-    { removeNonInheritableGroupAttrs: true },
-    { removeUselessStrokeAndFill: true },
-    { removeUnusedNS: true },
-    { cleanupIDs: true },
-    { cleanupNumericValues: true },
-    { moveElemsAttrsToGroup: true },
-    { moveGroupAttrsToElems: true },
-    { collapseGroups: true },
-    { removeRasterImages: false },
-    { mergePaths: true },
-    { convertShapeToPath: true },
-    { sortAttrs: true },
-    { transformsWithOnePath: false },
-    { removeDimensions: false },
-    { removeAttrs: { attrs: ["fill=none"] } }
-  ];
-  return Object.assign({ plugins }, options);
+  return {
+    plugins: [
+      'cleanupAttrs',
+      'removeDoctype',
+      'removeXMLProcInst',
+      'removeComments',
+      'removeMetadata',
+      'removeTitle',
+      'removeDesc',
+      'removeUselessDefs',
+      'removeEditorsNSData',
+      'removeEmptyAttrs',
+      'removeHiddenElems',
+      'removeEmptyText',
+      'removeEmptyContainers',
+      'convertStyleToAttrs',
+      'convertPathData',
+      'convertTransform',
+      'removeUnknownsAndDefaults',
+      'removeNonInheritableGroupAttrs',
+      'removeUselessStrokeAndFill',
+      'removeUnusedNS',
+      'cleanupNumericValues',
+      'moveElemsAttrsToGroup',
+      'moveGroupAttrsToElems',
+      'collapseGroups',
+      'mergePaths',
+      'convertShapeToPath',
+      'sortAttrs',
+      'removeDimensions',
+    ],
+    ...options,
+  };
 }

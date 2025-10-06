@@ -1,5 +1,5 @@
-const help = require("./help");
-const { Readable } = require("stream");
+const help = require('./help');
+const { Readable } = require('stream');
 
 /**
  * Choose what to run depending on options
@@ -10,7 +10,7 @@ const { Readable } = require("stream");
 function main(sources, options) {
   // parse process.argv if no arguments provided
   if (arguments.length === 0) {
-    const minimist = require("minimist");
+    const minimist = require('minimist');
     const args = minimist(process.argv.slice(2));
     return main(args._, args);
   }
@@ -21,13 +21,13 @@ function main(sources, options) {
     help.printHelp();
   } else {
     // don't load unless necessary
-    const packsvg = require("./pack")(options);
+    const packsvg = require('./pack')(options);
     packsvg(sources).then(writeResults(options));
   }
 }
 
 function writeResults(options) {
-  return function(result) {
+  return function (result) {
     const output = options.output || process.stdout;
     getStream(result).pipe(output);
   };

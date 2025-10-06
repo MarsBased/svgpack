@@ -1,10 +1,13 @@
-const fp = require("lodash/fp");
-const glob = require("globby");
-const { join } = require("path");
-const fs = require("fs");
-const util = require("util");
+const fp = require('lodash/fp');
+const glob = require('globby');
+const { join } = require('path');
+const fs = require('fs');
+const util = require('util');
 
-const hasExtension = (ext = ".svg") => name => name.endsWith(ext);
+const hasExtension =
+  (ext = '.svg') =>
+  (name) =>
+    name.endsWith(ext);
 
 /**
  * Create a getEntries function using the given options
@@ -13,7 +16,7 @@ const hasExtension = (ext = ".svg") => name => name.endsWith(ext);
  *
  * @option {String} [extension='.svg'] - the file extension
  */
-module.exports = function(options = {}) {
+module.exports = function (options = {}) {
   const isValid = options.isValid || hasExtension(options.extension);
 
   /**
@@ -28,11 +31,11 @@ module.exports = function(options = {}) {
     const lstat = util.promisify(fs.lstat);
     const readdir = util.promisify(fs.readdir);
 
-    const readDir = base =>
-      readdir(base).then(fp.map(name => join(base, name)));
-    const expand = name =>
+    const readDir = (base) =>
+      readdir(base).then(fp.map((name) => join(base, name)));
+    const expand = (name) =>
       lstat(name)
-        .then(stats => (stats.isFile() ? name : readDir(name)))
+        .then((stats) => (stats.isFile() ? name : readDir(name)))
         .catch(() => glob(name));
 
     return Promise.all(sources.map(expand))
