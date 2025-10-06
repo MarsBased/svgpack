@@ -1,19 +1,37 @@
-@function icon-arrow-right($color: #ef1625) {
-  $color: str-replace(inspect($color), "#", "%23"); //fix and replace hexcolor
-  @return url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='"+$color+"' fill-rule='evenodd' d='M9.906 4.829l-1.06 1.06 1.72 1.72h-7.19a.75.75 0 0 0 0 1.5h7.19l-1.72 1.72 1.06 1.06 3.53-3.53-3.53-3.53z'/%3E%3C/svg%3E");
+
+/// Replace `$search` with `$replace` in `$string`
+/// @author Hugo Giraudel
+/// @param {String} $string - Initial string
+/// @param {String} $search - Substring to replace
+/// @param {String} $replace ('') - New value
+/// @return {String} - Updated string
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
 }
 
-@function icon-caret-down($color: #ef1625) {
-  $color: str-replace(inspect($color), "#", "%23"); //fix and replace hexcolor
-  @return url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='"+$color+"' fill-rule='evenodd' d='M12 6.5c0-.273-.227-.5-.5-.5h-7c-.273 0-.5.227-.5.5 0 .133.055.258.148.352l3.5 3.5A.497.497 0 0 0 8 10.5a.497.497 0 0 0 .352-.148l1.758-1.759 1.742-1.741A.497.497 0 0 0 12 6.5z'/%3E%3C/svg%3E");
+
+@function icon-arrow-right($color: #EF1625) {
+  $color: str-replace(inspect($color), '#', '%23'); //fix and replace hexcolor
+  @return url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cg id='icon-arrow-right' fill='none' fill-rule='evenodd' stroke='none' stroke-width='1'%3E%3Cpath id='arrow-right' fill='"+$color+"' d='m9.906 4.829-1.06 1.06 1.72 1.72h-7.19a.75.75 0 0 0 0 1.5h7.19l-1.72 1.72 1.06 1.06 3.53-3.53z'/%3E%3C/g%3E%3C/svg%3E");
 }
 
-@function icon-required($color: #ef1625) {
-  $color: str-replace(inspect($color), "#", "%23"); //fix and replace hexcolor
-  @return url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='"+$color+"' fill-rule='evenodd' d='M7.1 8.54L4 7.46 4.636 6l2.808 1.46L7.179 4H8.82l-.265 3.46L11.364 6 12 7.46 8.927 8.54l2.384 2.406L10.146 12l-2.12-2.81L5.907 12l-1.192-1.054z'/%3E%3C/svg%3E");
+@function icon-caret-down($color: #EF1625) {
+  $color: str-replace(inspect($color), '#', '%23'); //fix and replace hexcolor
+  @return url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cg id='icon-caret-down' fill='none' fill-rule='evenodd' stroke='none' stroke-width='1'%3E%3Cpath id='caret-down' fill='"+$color+"' d='M12 6.5c0-.273-.227-.5-.5-.5h-7c-.273 0-.5.227-.5.5 0 .133.055.258.148.352l3.5 3.5A.5.5 0 0 0 8 10.5a.5.5 0 0 0 .352-.148l1.758-1.759 1.742-1.741A.5.5 0 0 0 12 6.5'/%3E%3C/g%3E%3C/svg%3E");
 }
 
-@function icon-search($color: #ef1625) {
-  $color: str-replace(inspect($color), "#", "%23"); //fix and replace hexcolor
-  @return url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='"+$color+"' fill-rule='nonzero' d='M6.893 10.195v-.5A2.781 2.781 0 0 0 9.67 6.908 2.782 2.782 0 0 0 6.893 4.12a2.782 2.782 0 0 0-2.775 2.788 2.781 2.781 0 0 0 2.775 2.787v.5zm6.37 1.919a.811.811 0 1 1-1.15 1.147l-2.711-2.738a4.356 4.356 0 0 1-2.509.792A4.4 4.4 0 0 1 2.5 6.908 4.4 4.4 0 0 1 6.893 2.5a4.4 4.4 0 0 1 4.394 4.408c0 .889-.265 1.738-.747 2.456l2.723 2.75z'/%3E%3C/svg%3E");
+@function icon-required($color: #EF1625) {
+  $color: str-replace(inspect($color), '#', '%23'); //fix and replace hexcolor
+  @return url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cg id='icon-required' fill='none' fill-rule='evenodd' stroke='none' stroke-width='1'%3E%3Cpath id='required' fill='"+$color+"' d='M7.09933775 8.54054054 4 7.45945946 4.63576159 6 7.44370861 7.45945946 7.17880795 4 8.82119205 4 8.55629139 7.45945946 11.3642384 6 12 7.45945946 8.92715232 8.54054054 11.3112583 10.945946 10.1456954 12 8.02649007 9.18918919 5.90728477 12 4.71523179 10.945946z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+@function icon-search($color: #EF1625) {
+  $color: str-replace(inspect($color), '#', '%23'); //fix and replace hexcolor
+  @return url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cg id='icon-search' fill='none' fill-rule='evenodd' stroke='none' stroke-width='1'%3E%3Cpath id='Loupe' fill='"+$color+"' fill-rule='nonzero' d='M6.893 10.195v-.5A2.78 2.78 0 0 0 9.67 6.908 2.78 2.78 0 0 0 6.893 4.12a2.78 2.78 0 0 0-2.775 2.788 2.78 2.78 0 0 0 2.775 2.787zm6.37 1.919a.811.811 0 1 1-1.15 1.147l-2.711-2.738a4.36 4.36 0 0 1-2.509.792A4.4 4.4 0 0 1 2.5 6.908 4.4 4.4 0 0 1 6.893 2.5a4.4 4.4 0 0 1 4.394 4.408c0 .889-.265 1.738-.747 2.456z'/%3E%3C/g%3E%3C/svg%3E");
 }

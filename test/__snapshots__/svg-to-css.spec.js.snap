@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CSS module generate CSS variable 1`] = `
+"  --my-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cg id='icon-handshake' fill='none' fill-rule='evenodd' stroke='none' stroke-width='1'%3E%3Cpath id='Fill-1' fill='%23000000' d='M25.067 43.783c1.103-3.152-16.36 43.772-17.646 47.11s.552 5.75 3.125 6.677c2.574.928 4.596 1.67 7.72 2.597 3.125.927 3.86-.557 4.78-2.597.919-2.04 16.726-45.44 17.83-47.851 1.102-2.411.734-4.57-2.574-6.087-3.31-1.518-5.699-2.074-8.823-3.001-3.125-.928-4.412 3.152-4.412 3.152'/%3E%3C/g%3E%3C/svg%3E");
+"
+`;
+
+exports[`CSS module generate CSS variable with simple icon 1`] = `
+"  --my-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cg id='icon-search' fill='none' fill-rule='evenodd' stroke='none' stroke-width='1'%3E%3Cpath id='Loupe' fill='%23000000' fill-rule='nonzero' d='M6.893 10.195v-.5A2.78 2.78 0 0 0 9.67 6.908 2.78 2.78 0 0 0 6.893 4.12a2.78 2.78 0 0 0-2.775 2.788 2.78 2.78 0 0 0 2.775 2.787zm6.37 1.919a.811.811 0 1 1-1.15 1.147l-2.711-2.738a4.36 4.36 0 0 1-2.509.792A4.4 4.4 0 0 1 2.5 6.908 4.4 4.4 0 0 1 6.893 2.5a4.4 4.4 0 0 1 4.394 4.408c0 .889-.265 1.738-.747 2.456z'/%3E%3C/g%3E%3C/svg%3E");
+"
+`;
