@@ -2,3 +2,11 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 npx lint-staged
+
+# Run tests only if there are changes to source files or tests
+if git diff --cached --name-only | grep -E '\.(js|jsx|ts|tsx)$' | grep -E '^(src/|test/)'; then
+  echo "Running tests..."
+  npm test
+else
+  echo "No source or test files changed, skipping tests"
+fi

@@ -1,17 +1,4 @@
 import React from 'react';
-
-export interface SvgpackBackgroundProps extends React.HTMLAttributes<HTMLDivElement> {
-  image?: string;
-  width?: string;
-  height?: string;
-}
-
-export interface SvgpackMaskProps extends React.HTMLAttributes<HTMLDivElement> {
-  image?: string;
-  width?: string;
-  height?: string;
-}
-
 declare module '@marsbased/svgpack/components' {
   export interface SvgpackBackgroundProps extends React.HTMLAttributes<HTMLDivElement> {
     image?: string;
