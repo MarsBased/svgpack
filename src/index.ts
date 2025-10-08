@@ -1,2 +1,2 @@
 // Export React components
-export { SvgpackMask, SvgpackBackground } from './components';
+export { SvgpackMask, SvgpackBackground } from './components/index.js';
