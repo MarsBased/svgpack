@@ -16,13 +16,13 @@ export function SvgpackMask({
     ...(height && { '--image--height': height }),
   };
 
-  return (
-    <div 
-      className={`svgpack-mask${className ? ` ${className}` : ''}`} 
-      style={mergedStyle} 
-      {...props}
-    >
-      {children}
-    </div>
+  return React.createElement(
+    'div',
+    {
+      className: `svgpack-mask${className ? ` ${className}` : ''}`,
+      style: mergedStyle,
+      ...props,
+    },
+    children
   );
 }

@@ -16,13 +16,13 @@ export function SvgpackBackground({
     ...(height && { '--image--height': height }),
   };
 
-  return (
-    <div 
-      className={`svgpack-background${className ? ` ${className}` : ''}`} 
-      style={mergedStyle} 
-      {...props}
-    >
-      {children}
-    </div>
+  return React.createElement(
+    'div',
+    {
+      className: `svgpack-background${className ? ` ${className}` : ''}`,
+      style: mergedStyle,
+      ...props,
+    },
+    children
   );
 }
