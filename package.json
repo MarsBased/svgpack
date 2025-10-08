@@ -1,6 +1,6 @@
 {
   "name": "@marsbased/svgpack",
-  "version": "2.1.8",
+  "version": "2.1.9",
   "description": "Convert SVG files into CSS variables",
   "repository": "git@github.com:MarsBased/svgpack.git",
   "author": "marsbased.com",
