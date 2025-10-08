@@ -1,12 +1,12 @@
 {
   "name": "@marsbased/svgpack",
-  "version": "2.1.2",
+  "version": "2.1.3",
   "description": "Convert SVG files into CSS variables",
   "repository": "git@github.com:MarsBased/svgpack.git",
   "author": "marsbased.com",
   "license": "MIT",
   "main": "src/index.ts",
-  "types": "src/index.ts",
+  "types": "src/types.d.ts",
   "exports": {
     ".": "./src/index.ts",
     "./components": "./src/components/index.ts"
@@ -19,7 +19,7 @@
     "test:eslint": "eslint src/",
     "lint": "eslint src/",
     "lint:fix": "eslint src/ --fix",
-    "build": "tsc --noEmit",
+    "build": "tsc",
     "test:build": "npm run build && npm run test",
     "prepare": "node -e \"if(process.env.npm_config_global !== 'true' && !process.env.CI) { try { require('husky').install() } catch(e) { /* husky not available */ } }\""
   },

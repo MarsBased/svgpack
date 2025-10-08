@@ -1,11 +1,5 @@
 import React from 'react';
 
-interface SvgpackMaskProps extends React.HTMLAttributes<HTMLDivElement> {
-  image?: string;
-  width?: string;
-  height?: string;
-}
-
 export function SvgpackMask({
   className,
   image,
@@ -14,7 +8,7 @@ export function SvgpackMask({
   style,
   children,
   ...props
-}: SvgpackMaskProps) {
+}) {
   const mergedStyle = {
     ...style,
     ...(image && { '--image': `var(--${image})` }),

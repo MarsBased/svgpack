@@ -1,11 +1,5 @@
 import React from 'react';
 
-interface SvgpackBackgroundProps extends React.HTMLAttributes<HTMLDivElement> {
-  image?: string;
-  width?: string;
-  height?: string;
-}
-
 export function SvgpackBackground({
   className,
   image,
@@ -14,7 +8,7 @@ export function SvgpackBackground({
   style,
   children,
   ...props
-}: SvgpackBackgroundProps) {
+}) {
   const mergedStyle = {
     ...style,
     ...(image && { '--image': `var(--${image})` }),
