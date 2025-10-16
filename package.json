@@ -15,6 +15,7 @@
     "svgpack": "bin/svgpack"
   },
   "scripts": {
+    "docs": "cd docs && ./serve.sh",
     "test": "jest",
     "test:eslint": "eslint src/",
     "lint": "eslint src/",

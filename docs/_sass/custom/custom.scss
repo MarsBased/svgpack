@@ -1,0 +1,158 @@
+@import "../color_schemes/svgpack-custom.scss";
+@import "svgpack.css";
+
+@property --col-1 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #D929CC;
+}
+
+@property --col-2 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #EF1625;
+}
+
+.highlight {
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+
+.site-footer {
+  color: inherit;
+}
+
+.side-bar {
+  background: linear-gradient(to bottom, var(--col-1), var(--col-2));
+  background-color: $primary;
+  animation: gradient 10s ease-in-out infinite alternate;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  @include mq('md') {
+    position: fixed;
+  }
+
+  a {
+    color: inherit;
+  }
+}
+
+@keyframes gradient {
+  to {
+    --col-1: #EF1625;
+    --col-2: #FB7C13;
+  }
+}
+
+.site-title {
+  --image: var(--logo-svgpack-imagotype);
+
+  font-size: 0;
+  text-indent: -9999px;
+  background-color: var(--image--color, currentColor);
+  mask: var(--image) center/contain no-repeat;
+  mask-size: 100% 100%;
+  width: var(--image--width, 180px);
+  height: var(--image--height, 38px);
+  margin-right: auto;
+  margin-left: 20px;
+  flex-grow: 0;
+
+  @include mq('md') {
+    margin-left: 36px;
+  }
+}
+
+.site-footer {
+  position: static;
+  display: none;
+  @include mq('md') {
+    position: static;
+    display: block;
+  }
+}
+
+.site-header {
+  .site-button {
+    background: transparent;
+    color: white;
+
+    .icon {
+      color: inherit;
+    }
+  }
+}
+
+.site-button {
+  cursor: pointer;
+}
+
+.aux-nav-list-item .site-button {
+  color: white;
+
+  @include mq('md') {
+    color: $secondary;
+    background: linear-gradient(to bottom, var(--col-1), var(--col-2));
+    animation: gradient 10s ease-in-out infinite alternate;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+  }
+
+  .svgpack-mask {
+    background: linear-gradient(to bottom, var(--col-1), var(--col-2));
+    animation: gradient 10s ease-in-out infinite alternate;
+  }
+}
+
+.side-bar + .main .main-header {
+  background-color: $secondary;
+
+  @include mq('md') {
+    background-color: transparent;
+  }
+}
+
+.site-header {
+  border-bottom: 0 !important;
+}
+
+.nav-list .nav-list-item .nav-list-link.active {
+  background: linear-gradient(-90deg, rgba(235, 237, 245, 0.35) 0%, rgba(235, 237, 245, 0.05) 80%, rgba(235, 237, 245, .1) 100%);
+}
+
+.nav-list .nav-list-item .nav-list-link:hover {
+  background: transparent;
+  font-weight: 700;
+}
+
+.icon-github {
+  --image: var(--icon-github);
+  --image--width: 1.5em;
+  --image--height: 1.5em;
+  margin-right: .5rem;
+}
+
+.icon-npm {
+  --image: var(--icon-npm);
+  --image--width: 1.5em;
+  --image--height: 1.5em;
+  margin-right: .5rem;
+}
+
+.main-logo-svgpack {
+  --image: var(--logo-svgpack-imagotype);
+  --image--width: 100%;
+  --image--height: 100%;
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  display: block;
+  background: linear-gradient(to bottom, var(--col-1), var(--col-2));
+  background-color: $primary;
+  animation: gradient 10s ease-in-out infinite alternate;
+}

@@ -59,3 +59,12 @@ typings/
 
 # next.js build output
 .next
+
+# Jekyll build output
+docs/_site/
+
+# Chrome DevTools
+.well-known/
+
+# macOS
+.DS_Store
