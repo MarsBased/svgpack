@@ -1,0 +1,41 @@
+# Jekyll configuration for GitHub Pages
+title: svgpack
+description: Convert SVG files into CSS variables and ready-to-use classes
+author: MarsBased
+url: https://marsbased.github.io/svgpack
+baseurl: /svgpack
+
+custom_css:
+  - assets/css/svgpack.css
+
+# GitHub Pages settings
+remote_theme: just-the-docs/just-the-docs
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Site settings
+# logo: svgpack-icon.png
+favicon: svgpack-icon.png
+search_enabled: true
+search:
+  provider: lunr
+
+# Navigation
+nav_external_links: true
+nav_external_links_new_tab: true
+nav_fold: false
+aux_links:
+  "<i class='svgpack-mask  icon-github'></i> svgpack on GitHub":
+    - "//github.com/MarsBased/svgpack"
+  "<i class='svgpack-mask  icon-npm'></i> svgpack on npm":
+    - "//www.npmjs.com/package/@marsbased/svgpack"
+
+# Footer
+footer_content: |
+  <p>svgpack - Convert SVG files into CSS variables and ready-to-use classes</p>
+  <p>Built with ❤️ by <a href="https://marsbased.com">MarsBased</a></p>
+
+# Color scheme
+color_scheme: svgpack-custom
