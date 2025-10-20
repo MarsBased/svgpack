@@ -16,7 +16,7 @@ plugins:
   - jekyll-seo-tag
 
 # Site settings
-# logo: svgpack-icon.png
+logo: svgpack-icon.png
 favicon: svgpack-icon.png
 search_enabled: true
 search:
