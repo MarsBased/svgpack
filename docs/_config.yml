@@ -3,7 +3,7 @@ title: svgpack
 description: Convert SVG files into CSS variables and ready-to-use classes
 author: MarsBased
 url: https://marsbased.github.io/svgpack
-baseurl: /svgpack
+baseurl: ''
 
 custom_css:
   - assets/css/svgpack.css
