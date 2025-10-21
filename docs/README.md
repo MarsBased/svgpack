@@ -41,12 +41,12 @@ Instead of embedding SVG code directly in your HTML (which downloads the entire 
 
 ## Table of Contents
 
-- [Quick Start](https://marsbased.github.io/svgpack/quick-start/)
-- [CLI Usage](https://marsbased.github.io/svgpack/cli-usage/)
-- [CSS Variables Usage](https://marsbased.github.io/svgpack/css-variables/)
-- [SCSS Functions](https://marsbased.github.io/svgpack/scss-functions/)
-- [React Components](https://marsbased.github.io/svgpack/react-components/)
-- [Installation](https://marsbased.github.io/svgpack/installation/)
+- [Quick Start](https://svgpack.marsbased.com/quick-start/)
+- [CLI Usage](https://svgpack.marsbased.com/cli-usage/)
+- [CSS Variables Usage](https://svgpack.marsbased.com/css-variables/)
+- [SCSS Functions](https://svgpack.marsbased.com/scss-functions/)
+- [React Components](https://svgpack.marsbased.com/react-components/)
+- [Installation](https://svgpack.marsbased.com/installation/)
 
 ## Quick Start
 
