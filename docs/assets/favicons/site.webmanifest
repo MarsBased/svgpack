@@ -1,0 +1,28 @@
+---
+---
+{
+  "name": "svgpack",
+  "short_name": "svgpack",
+  "icons": [
+    {
+      "src": "{{ "/assets/favicons/favicon-96x96.png" | relative_url }}",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "{{ "/assets/favicons/favicon.svg" | relative_url }}",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "{{ "/assets/favicons/apple-touch-icon.png" | relative_url }}",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "theme_color": "#111318",
+  "background_color": "#111318",
+  "display": "standalone"
+}
+

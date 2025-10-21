@@ -1,12 +1,17 @@
-# svgpack
+---
+layout: default
+title: Home
+description: Convert SVG files into CSS variables and ready-to-use classes
+nav_order: 1
+permalink: /
+markdown: kramdown
+kramdown:
+  parse_block_html: true
+---
 
-# [![svgpack](https://raw.githubusercontent.com/MarsBased/svgpack/main/docs/svgpack.png)](https://www.npmjs.com/package/@marsbased/svgpack)
+<div class="svgpack-mask main-logo-svgpack" aria-label="svgpack logo"></div>
 
 [![npm](https://img.shields.io/npm/v/@marsbased/svgpack.svg?style=flat-square)](https://www.npmjs.com/package/@marsbased/svgpack)
-
-## Documentation
-
-📖 **[View Full Documentation](https://marsbased.github.io/svgpack/)**
 
 `svgpack` converts SVG files into CSS variables and ready-to-use classes.
 
@@ -67,6 +72,10 @@ svgpack my-images/ --sass > images.scss
 svgpack --help
 ```
 
-## License
-
-MIT License
+**Example output:**
+```css
+:root {
+  --my-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'...");
+  --my-logo: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'...");
+}
+```
