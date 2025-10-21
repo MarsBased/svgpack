@@ -1,6 +1,6 @@
 # svgpack
 
-# [![svgpack](https://raw.githubusercontent.com/MarsBased/svgpack/main/docs/svgpack.png)](https://www.npmjs.com/package/@marsbased/svgpack)
+# [![svgpack](https://raw.githubusercontent.com/MarsBased/svgpack/main/docs/svgpack-logo.png)](https://www.npmjs.com/package/@marsbased/svgpack)
 
 [![npm](https://img.shields.io/npm/v/@marsbased/svgpack.svg?style=flat-square)](https://www.npmjs.com/package/@marsbased/svgpack)
 
