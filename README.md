@@ -1,12 +1,12 @@
 # svgpack
 
-# [![svgpack](https://raw.githubusercontent.com/MarsBased/svgpack/main/docs/svgpack-logo.png)](https://www.npmjs.com/package/@marsbased/svgpack)
+# [![svgpack](https://raw.githubusercontent.com/MarsBased/svgpack/main/docs/svgpack-logo.svg)](https://svgpack.marsbased.com)
 
 [![npm](https://img.shields.io/npm/v/@marsbased/svgpack.svg?style=flat-square)](https://www.npmjs.com/package/@marsbased/svgpack)
 
 ## Documentation
 
-📖 **[View Full Documentation](https://svgpack.marsbased.com/)**
+📖 **[View Full Documentation](https://svgpack.marsbased.com)**
 
 `svgpack` converts SVG files into CSS variables and ready-to-use classes.
 
