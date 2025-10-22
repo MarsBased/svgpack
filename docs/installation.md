@@ -13,7 +13,9 @@ kramdown:
 
 ## Project Dependency (Recommended)
 
-For both React components and build scripts:
+### As Production Dependency
+
+Install as a regular dependency if you need **React components** in your application:
 
 ```bash
 # npm
@@ -23,9 +25,26 @@ npm install @marsbased/svgpack
 yarn add @marsbased/svgpack
 ```
 
-Use cases:
-- **React Components**: Import and use components directly
-- **Build Scripts**: Add to package.json scripts for automated SVG processing
+Use this when:
+- **React Components**: You import and use `SvgpackBackground` or `SvgpackMask` components in your React app
+- The package needs to be available in production/runtime
+
+### As Development Dependency
+
+Install as a dev dependency if you only need **build-time SVG processing** (CSS/SCSS generation):
+
+```bash
+# npm
+npm install --save-dev @marsbased/svgpack
+
+# yarn
+yarn add --dev @marsbased/svgpack
+```
+
+Use this when:
+- **Build Scripts**: You only use svgpack to generate CSS/SCSS files during build time
+- You don't use React components
+- The package is only needed during development/build process
 
 ## Global Installation (CLI Only)
 
